@@ -1,3 +1,4 @@
+#include "np_embed.h"
 /*
  * Copyright 1995-2019 The OpenSSL Project Authors. All Rights Reserved.
  *

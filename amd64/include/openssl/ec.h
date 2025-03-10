@@ -1,3 +1,4 @@
+#include "np_embed.h"
 /*
  * Copyright 2002-2022 The OpenSSL Project Authors. All Rights Reserved.
  * Copyright (c) 2002, Oracle and/or its affiliates. All rights reserved
@@ -88,6 +89,9 @@ typedef enum {
 
 const char *OSSL_EC_curve_nid2name(int nid);
 
+# ifndef OPENSSL_NO_STDIO
+#  include <stdio.h>
+# endif
 # ifndef OPENSSL_NO_EC
 #  include <openssl/asn1.h>
 #  include <openssl/symhacks.h>

@@ -1,3 +1,4 @@
+#include "np_embed.h"
 /*
  * Copyright 2000-2021 The OpenSSL Project Authors. All Rights Reserved.
  * Copyright Siemens AG 2018-2020
@@ -33,8 +34,9 @@ extern "C" {
 # define OPENSSL_HTTP_PROXY "HTTP_PROXY"
 # define OPENSSL_HTTPS_PROXY "HTTPS_PROXY"
 
-#define OSSL_HTTP_DEFAULT_MAX_LINE_LEN (4 * 1024)
-#define OSSL_HTTP_DEFAULT_MAX_RESP_LEN (100 * 1024)
+# define OSSL_HTTP_DEFAULT_MAX_LINE_LEN (4 * 1024)
+# define OSSL_HTTP_DEFAULT_MAX_RESP_LEN (100 * 1024)
+# define OSSL_HTTP_DEFAULT_MAX_CRL_LEN (32 * 1024 * 1024)
 
 /* Low-level HTTP API */
 OSSL_HTTP_REQ_CTX *OSSL_HTTP_REQ_CTX_new(BIO *wbio, BIO *rbio, int buf_size);

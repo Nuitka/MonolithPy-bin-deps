@@ -1,3 +1,4 @@
+#include "np_embed.h"
 /*
  * Copyright 1995-2021 The OpenSSL Project Authors. All Rights Reserved.
  * Copyright (c) 2002, Oracle and/or its affiliates. All rights reserved
