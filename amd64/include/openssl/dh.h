@@ -1,4 +1,4 @@
-#include "np_embed.h"
+#include "mp_embed.h"
 /*
  * Copyright 1995-2023 The OpenSSL Project Authors. All Rights Reserved.
  *
@@ -26,7 +26,11 @@ extern "C" {
 
 #include <stdlib.h>
 
-/* DH parameter generation types used by EVP_PKEY_CTX_set_dh_paramgen_type() */
+/*
+ * DH parameter generation types used by EVP_PKEY_CTX_set_dh_paramgen_type()
+ * Note that additions/changes to this set of values requires corresponding
+ * adjustments to range checks in dh_gen()
+ */
 # define DH_PARAMGEN_TYPE_GENERATOR     0   /* Use a safe prime generator */
 # define DH_PARAMGEN_TYPE_FIPS_186_2    1   /* Use FIPS186-2 standard */
 # define DH_PARAMGEN_TYPE_FIPS_186_4    2   /* Use FIPS186-4 standard */

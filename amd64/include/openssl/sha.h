@@ -1,6 +1,6 @@
-#include "np_embed.h"
+#include "mp_embed.h"
 /*
- * Copyright 1995-2021 The OpenSSL Project Authors. All Rights Reserved.
+ * Copyright 1995-2023 The OpenSSL Project Authors. All Rights Reserved.
  *
  * Licensed under the Apache License 2.0 (the "License").  You may not use
  * this file except in compliance with the License.  You can obtain a copy
@@ -82,6 +82,7 @@ OSSL_DEPRECATEDIN_3_0 void SHA256_Transform(SHA256_CTX *c,
 unsigned char *SHA224(const unsigned char *d, size_t n, unsigned char *md);
 unsigned char *SHA256(const unsigned char *d, size_t n, unsigned char *md);
 
+# define SHA256_192_DIGEST_LENGTH 24
 # define SHA224_DIGEST_LENGTH    28
 # define SHA256_DIGEST_LENGTH    32
 # define SHA384_DIGEST_LENGTH    48
