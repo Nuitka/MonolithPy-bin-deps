@@ -623,18 +623,13 @@ OPTIMIZING = 0
 OPTIMIZATIONS  = $(OPTIMIZATIONS) -GS
 !endif
 
-# Link time optimization. Note that this option (potentially) makes
-# generated libraries only usable by the specific VC++ version that
-# created it. Requires /LTCG linker option
-!if [nmakehlp -c -GL]
-OPTIMIZATIONS  = $(OPTIMIZATIONS) -GL
-CC_GL_OPT_ENABLED = 1
-!else
+# Link time optimization disabled: -GL produces LTCG IR that is tied to
+# the exact cl.exe build, which breaks linking when extension wheels are
+# compiled with a different MSVC micro-version than the bin-dep.
 # In newer compilers -GL and -YX are incompatible.
 !if [nmakehlp -c -YX]
 OPTIMIZATIONS  = $(OPTIMIZATIONS) -YX
 !endif
-!endif # [nmakehlp -c -GL]
 
 DEBUGFLAGS     = $(FPOPTS)
 
